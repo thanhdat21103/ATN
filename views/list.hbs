@@ -1,0 +1,35 @@
+{{!-- table.table-primary.text-center.bg-light.mt-3.mb-3>tr*3>th*8 --}}
+<table class="table table-primary text-center bg-light mt-3 mb-3">
+   <tr>
+      <th class="h1 text text-danger" colspan="5">Mobile List</th>
+      <th>
+         <a class="btn btn-success" href="/add">Add</a>
+         <a class="btn btn-danger" href="/drop"
+         onclick="return confirm('Are you sure to delete all mobiles ?');"
+         >Drop</a>
+      </th>
+   </tr>
+   <tr class="cot">
+      <th>Name</th>
+      <th>Img</th>
+      <th>Origin</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th style="color:brown">Menu</th>
+   </tr>
+   {{#each toys }}
+   <tr>
+      <th>{{ name }}</th>
+      <th><img src="{{ img }}" alt="" width="200px"></th>
+      <th>{{ origin }}</th>
+      <th>{{ quantity }}</th>
+      <th>${{ price }}</th>
+      <th>
+         <a class="btn btn-warning" href="/edit/{{_id}}">Edit</a>
+         <a class="btn btn-danger" href="/delete/{{_id}}" 
+         onclick="return confirm('Are you sure to delete this mobile ?');"
+         >Delete</a>
+      </th>
+   </tr>
+   {{/each}}
+</table>
